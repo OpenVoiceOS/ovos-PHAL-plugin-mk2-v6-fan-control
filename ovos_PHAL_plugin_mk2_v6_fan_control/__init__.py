@@ -1,4 +1,5 @@
 from threading import Event
+from os.path import exists
 
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_plugin_manager.templates.phal import PHALValidator
