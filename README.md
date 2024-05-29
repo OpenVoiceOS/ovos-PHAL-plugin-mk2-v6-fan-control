@@ -31,3 +31,21 @@ When `ovos-i2csound` is installed and running, it creates a file at `/etc/OpenVo
 If the above two options don't work, the plugin tries to detect a compatible HAT using `i2c-detect`.  If a compatible device address is found, the plugin will activate.
 
 From this point, if you are running OVOS on a Mark2 dev kit, your fan should be automatically controlled.
+
+### Configuration
+
+The temperature at which the fan turns on can be configured
+
+```json
+{
+    "PHAL": {
+        "ovos-PHAL-plugin-mk2-v6-fan-control": {
+            "max_fanless_temp": 60.0,
+            "max_fan_temp": 80.0
+        }
+    }
+}
+```
+
+`"max_fanless_temp"` -> This is where the fan turns on
+`"max_fan_temp"` -> At this temp, the fan runs at 100%

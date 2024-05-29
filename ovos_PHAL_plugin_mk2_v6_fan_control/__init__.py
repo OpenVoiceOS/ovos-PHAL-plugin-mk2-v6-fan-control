@@ -1,3 +1,5 @@
+from threading import Event
+
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_plugin_manager.templates.phal import PHALValidator
 from ovos_utils.log import LOG
@@ -37,8 +39,8 @@ class Mk2Rev6FanControls(PHALPlugin):
         super().__init__(bus=bus, name="ovos-phal-plugin-mk2-devkit-fan", config=config)
         self.fan = R6FanControl()
         self.exit_flag = Event()
-        self._max_fanless_temp = 60.0  # Highest fan-less temp allowed
-        self._max_fan_temp = 80.0  # Thermal throttle temp max fan
+        self._max_fanless_temp = self.config.get("max_fanless_temp", 60.0) # Highest fan-less temp allowed
+        self._max_fan_temp = self.config.get("max_fan_temp", 80.0)  # Thermal throttle temp max fan
 
         if self.config.get("min_fan_temp"):
             self.set_min_fan_temp(float(self.config.get("min_fan_temp")))
