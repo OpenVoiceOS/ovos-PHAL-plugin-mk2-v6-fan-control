@@ -1,3 +1,4 @@
+import subprocess
 from threading import Event
 from os.path import exists
 
@@ -48,7 +49,7 @@ class Mk2Rev6FanControls(PHALPlugin):
 
     def get_cpu_temp(self):
         cmd = ["cat", "/sys/class/thermal/thermal_zone0/temp"]
-        out, err = self.execute_cmd(cmd)
+        out, err = self.fan.execute_cmd(cmd)
         return float(out.strip()) / 1000
 
     def set_min_fan_temp(self, new_temp: float):
@@ -69,6 +70,7 @@ class Mk2Rev6FanControls(PHALPlugin):
         self._max_fanless_temp = new_temp
 
     def run(self):
+        self.exit_flag = False
         LOG.debug("temperature monitor thread started")
         while not self.exit_flag.wait(30):
             LOG.debug(f"CPU temperature is {self.get_cpu_temp()}")
