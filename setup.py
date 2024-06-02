@@ -23,7 +23,8 @@ setup(
     license='MIT',
     packages=['ovos_PHAL_plugin_mk2_v6_fan_control'],
     package_data={'': package_files('ovos_PHAL_plugin_mk2_v6_fan_control')},
-    install_requires=["ovos-plugin-manager>=0.0.1"],
+    install_requires=["ovos-plugin-manager>=0.0.1",
+                      "ovos-i2c-detection>=0.0.0a2"],
     zip_safe=True,
     include_package_data=True,
     classifiers=[

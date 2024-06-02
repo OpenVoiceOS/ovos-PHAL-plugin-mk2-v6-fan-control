@@ -5,7 +5,7 @@ from os.path import exists
 from ovos_plugin_manager.phal import PHALPlugin
 from ovos_plugin_manager.templates.phal import PHALValidator
 from ovos_utils.log import LOG
-from ovos_PHAL.detection import is_mycroft_sj201
+from ovos_i2c_detection import is_sj201_v6
 
 I2C_PLATFORM_FILE = "/etc/OpenVoiceOS/i2c_platform"
 
@@ -27,7 +27,7 @@ class Mk2Rev6FanValidator(PHALValidator):
             if platform == "sj201v6":
                 return True
             # Try a direct hardware check
-        if is_mycroft_sj201():
+        if is_sj201_v6():
             LOG.debug("direct hardware check found v6")
             return True
         LOG.debug("No Validation")
@@ -41,8 +41,10 @@ class Mk2Rev6FanControls(PHALPlugin):
         super().__init__(bus=bus, name="ovos-phal-plugin-mk2-devkit-fan", config=config)
         self.fan = R6FanControl()
         self.exit_flag = Event()
-        self._max_fanless_temp = self.config.get("max_fanless_temp", 60.0) # Highest fan-less temp allowed
-        self._max_fan_temp = self.config.get("max_fan_temp", 80.0)  # Thermal throttle temp max fan
+        self._max_fanless_temp = self.config.get(
+            "max_fanless_temp", 60.0)  # Highest fan-less temp allowed
+        self._max_fan_temp = self.config.get(
+            "max_fan_temp", 80.0)  # Thermal throttle temp max fan
 
         if self.config.get("min_fan_temp"):
             self.set_min_fan_temp(float(self.config.get("min_fan_temp")))
