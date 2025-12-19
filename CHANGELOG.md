@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.2a2) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a1...0.0.2a2)
+
+**Merged pull requests:**
+
+- Update dependency python to 3.14 [\#7](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/pull/7) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.2a1) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/V0.0.1...0.0.2a1)
