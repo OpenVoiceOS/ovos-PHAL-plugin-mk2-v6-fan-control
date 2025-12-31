@@ -37,7 +37,7 @@ jobs:
       - name: Install repo
         run: |
           pip install .
-      - uses: pypa/gh-action-pip-audit@v1.0.8
+      - uses: pypa/gh-action-pip-audit@v1.1.0
         with:
             # Ignore irrelevant Mercurial vulnerability
             # Ignore `requests` and `urllib3` vulnerabilities as they are not used in this package
