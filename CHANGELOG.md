@@ -1,20 +1,28 @@
 # Changelog
 
+## [0.0.3a1](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.3a1) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a3...0.0.3a1)
+
+**Merged pull requests:**
+
+- fix: require ovos-plugin-manager\>=2.1.0 for opm.\* entry points and cap ovos-\* deps at next major [\#17](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.2a3](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.2a3) (2026-06-16)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a2...0.0.2a3)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/V...0.0.2a3)
 
 **Merged pull requests:**
 
 - chore: add missing shared CI workflows [\#15](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/pull/15) ([JarbasAl](https://github.com/JarbasAl))
 
-## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.2a2) (2025-12-19)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/V...0.0.2a2)
-
 ## [V](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/V) (2025-12-19)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a1...V)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a2...V)
+
+## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/tree/0.0.2a2) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-mk2-v6-fan-control/compare/0.0.2a1...0.0.2a2)
 
 **Merged pull requests:**
 
