@@ -22,7 +22,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11"
 ]
 dependencies = [
-    "ovos-plugin-manager>=0.0.1",
+    "ovos-plugin-manager>=2.1.0,<3.0.0",
     "ovos-i2c-detection>=0.0.0a5"
 ]
 
