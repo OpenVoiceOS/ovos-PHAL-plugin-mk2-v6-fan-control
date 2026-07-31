@@ -1,15 +1,23 @@
 # ovos-PHAL-plugin-mk2-v6-fan-control
 
+This is an OVOS PHAL plugin. It controls the fan on the Mark2 dev kit hardware.
+
 **Compatible with**
 * Mycroft Mark2 dev kit
 
-# Usage
+## Install
 
-There are a few ways for this plugin to get enabled.
+```console
+pip install ovos-PHAL-plugin-mk2-fan-control
+```
+
+## Usage
+
+The plugin activates in one of three ways.
 
 * Enable manually
 
-Add this to your `~/.config/mycroft/mycroft.conf`
+Add this to your `~/.config/mycroft/mycroft.conf`.
 
 ```json
 {
@@ -20,21 +28,22 @@ Add this to your `~/.config/mycroft/mycroft.conf`
     }
 }
 ```
-With this configuration, no other validation checks are made.  It is assuming you have a compatible HAT installed.
 
-* Automatically with [ovos-i2csound](https://github.com/OpenVoiceOS/ovos-i2csound)
+With this configuration, the plugin makes no other validation checks. It assumes you have a compatible HAT installed.
 
-When `ovos-i2csound` is installed and running, it creates a file at `/etc/OpenVoiceOS/i2c_platform` with the HAT name it detected.  This plugin then checks that file and if a compatible HAT is detected, the plugin is activated.
+* Automatically with [OpenVoiceOS/ovos-i2csound](https://github.com/OpenVoiceOS/ovos-i2csound)
+
+When `ovos-i2csound` is installed and running, it creates a file at `/etc/OpenVoiceOS/i2c_platform` with the name of the HAT it detected. This plugin then reads that file. If it finds a compatible HAT, it activates.
 
 * Automatically with hardware detection
 
-If the above two options don't work, the plugin tries to detect a compatible HAT using `i2c-detect`.  If a compatible device address is found, the plugin will activate.
+If the two options above do not work, the plugin tries to detect a compatible HAT with `i2c-detect`. If it finds a compatible device address, it activates.
 
-From this point, if you are running OVOS on a Mark2 dev kit, your fan should be automatically controlled.
+Once active on a Mark2 dev kit, the plugin controls your fan automatically.
 
 ### Configuration
 
-The temperature at which the fan turns on can be configured
+You can set the temperature at which the fan turns on.
 
 ```json
 {
@@ -47,5 +56,13 @@ The temperature at which the fan turns on can be configured
 }
 ```
 
-`"max_fanless_temp"` -> This is where the fan turns on
-`"max_fan_temp"` -> At this temp, the fan runs at 100%
+* `max_fanless_temp` — the temperature at which the fan turns on.
+* `max_fan_temp` — the temperature at which the fan runs at 100%.
+
+## Related projects
+
+* [OpenVoiceOS/ovos-i2csound](https://github.com/OpenVoiceOS/ovos-i2csound) — detects the installed HAT and triggers this plugin automatically.
+
+## License
+
+This project is licensed under the MIT license. See [LICENSE](LICENSE) for the full text.
